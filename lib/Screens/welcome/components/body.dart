@@ -1,10 +1,11 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/Screens/welcome/Login/login_screen.dart';
+import 'package:flutter_auth/Screens/Login/login_screen.dart';
+import 'package:flutter_auth/Screens/Signup/signup_screen.dart';
+import 'package:flutter_auth/Screens/welcome/components/social_login_button.dart';
 import 'package:flutter_auth/components/rounded_button.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import 'package:flutter_auth/Screens/welcome/components/background.dart';
 import 'package:flutter_auth/constants.dart';
 
@@ -20,10 +21,6 @@ class Body extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              "WELCOME TO LOGIN",
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
             SizedBox(
               height: size.height * 0.05,
             ),
@@ -35,29 +32,42 @@ class Body extends StatelessWidget {
               height: size.height * 0.05,
             ),
             RoundedButton(
-                text: "LOGIN",
+              text: "Entrar",
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return LoginScreen();
+                    },
+                  ),
+                );
+              },
+            ),
+            RoundedButton(
+                text: "Cadastre-se",
+                color: kPrimaryLightColor,
+                textColor: Colors.black,
                 press: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return LoginScreen();
+                        return SignUpScreen();
                       },
                     ),
                   );
                 }),
-            RoundedButton(
-              text: "LOGIN",
-              color: kPrimaryLightColor,
-              textColor: Colors.black,
+            SocialLoginButton(
+              text: "Entrar com o google",
               press: () {},
-            ),
-            RoundedButton(
-              text: "LOGIN COM O GOOGLE",
-              color: kPrimaryLightColor,
-              textColor: Colors.black,
-              press: () {},
-            ),
+            )
+            //   text: "LOGIN COM O GOOGLE",
+            //   color: kPrimaryLightColor,
+            //   textColor: Colors.black,
+            //   press: () {},
+
+            // ),
           ],
         ),
       ),
