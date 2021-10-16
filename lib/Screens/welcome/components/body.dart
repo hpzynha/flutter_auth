@@ -3,11 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/Login/login_screen.dart';
 import 'package:flutter_auth/Screens/Signup/signup_screen.dart';
+import 'package:flutter_auth/Screens/provider/google_sign_in.dart';
 import 'package:flutter_auth/Screens/welcome/components/social_login_button.dart';
 import 'package:flutter_auth/components/rounded_button.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_auth/Screens/welcome/components/background.dart';
 import 'package:flutter_auth/constants.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
@@ -58,16 +60,7 @@ class Body extends StatelessWidget {
                     ),
                   );
                 }),
-            SocialLoginButton(
-              text: "Entrar com o google",
-              press: () {},
-            )
-            //   text: "LOGIN COM O GOOGLE",
-            //   color: kPrimaryLightColor,
-            //   textColor: Colors.black,
-            //   press: () {},
-
-            // ),
+            SocialLoginButton(text: "Entrar com o google", press: () {})
           ],
         ),
       ),
